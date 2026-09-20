@@ -131,64 +131,15 @@
     opacity: 0.7;
   }
 
-  /* TOP STATUS HUD */
-  .hud-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    height: 38px;
-    background: rgba(7, 9, 14, 0.88);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 24px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    z-index: 100;
-    color: var(--text-muted);
-  }
-
-  .hud-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .pulse-node {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--amber);
-    box-shadow: 0 0 10px var(--amber);
-    animation: blink 2.5s infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.35; transform: scale(0.85); }
-  }
-
-  .hud-right {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-  }
-
   /* FLOATING NAVIGATION DOCK */
   .nav-dock {
     position: fixed;
-    top: 50px;
+    top: 22px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(14, 18, 27, 0.82);
+    background: rgba(14, 18, 27, 0.88);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.25);
     border-radius: 24px;
     padding: 5px 12px;
     display: flex;
@@ -220,7 +171,7 @@
     width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 125px 24px 80px;
+    padding: 85px 24px 80px;
     position: relative;
     z-index: 1;
   }
@@ -1149,11 +1100,29 @@
 
   footer {
     border-top: 1px solid var(--border);
-    padding: 30px 24px;
+    padding: 32px 24px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-dim);
     font-family: 'JetBrains Mono', monospace;
+    line-height: 1.6;
+  }
+
+  .footer-brand-link {
+    color: var(--amber-light);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-brand-link:hover {
+    color: #ffffff;
+    background: rgba(245, 158, 11, 0.18);
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
   }
 
   /* ====================================================
@@ -1179,22 +1148,12 @@
       filter: blur(70px) !important;
     }
 
-    .hud-bar {
-      height: 34px !important;
-      padding: 0 12px !important;
-      font-size: 10px !important;
-    }
-
-    .hud-hide-mobile {
-      display: none !important;
-    }
-
     .nav-dock {
       display: none !important;
     }
 
     .container {
-      padding: 46px 14px 40px !important;
+      padding: 26px 14px 40px !important;
       max-width: 100% !important;
       width: 100% !important;
       box-sizing: border-box !important;
@@ -1596,19 +1555,6 @@
   <div class="ambient-orb orb-3"></div>
 </div>
 
-<!-- TOP STATUS HUD BAR -->
-<div class="hud-bar">
-  <div class="hud-left">
-    <div class="pulse-node"></div>
-    <span><span translate="no">HARPY OS</span> // Node Online</span>
-    <span class="hud-hide-mobile" style="color: var(--text-dim);">|</span>
-    <span class="hud-hide-mobile">Security Protocol: Encrypted (<span translate="no">E2EE</span>)</span>
-  </div>
-  <div class="hud-right">
-    <span id="liveClock" class="hud-hide-mobile">00:00:00 UTC</span>
-    <span style="color:var(--amber-light);">Sohag, Egypt</span>
-  </div>
-</div>
 
 <!-- FLOATING NAVIGATION DOCK -->
 <nav class="nav-dock">
@@ -2211,18 +2157,12 @@
 </div>
 
 <footer>
-  <span translate="no">HARPY CODE // ABDUL RAOUF AHMED</span> • BUSINESS INFORMATION SYSTEMS (<span translate="no">BIS 2026</span>) • CODE. AUTOMATE. DOMINATE.
+  <div class="footer-wrap">
+    <span>&copy; 2026 Designed &amp; Developed by <a href="https://www.facebook.com/profile.php?id=61590164165873" target="_blank" rel="noopener noreferrer" class="footer-brand-link" translate="no">Harpy</a>. All rights reserved.</span>
+  </div>
 </footer>
 
 <script>
-  // Live Clock
-  function updateClock() {
-    const now = new Date();
-    const utc = now.toUTCString().split(' ')[4] + ' UTC';
-    document.getElementById('liveClock').innerText = utc;
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
 
   // Persona Switcher
   function switchPersona(type) {
