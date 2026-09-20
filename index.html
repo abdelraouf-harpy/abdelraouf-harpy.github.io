@@ -45,10 +45,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    min-width: 0;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
   }
 
   body {
@@ -56,7 +60,9 @@
     color: var(--text-body);
     font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
     position: relative;
     min-height: 100vh;
   }
@@ -64,10 +70,9 @@
   /* LIVING AMBIENT BACKDROP (Soul, Warmth & Organic Depth) */
   .ambient-canvas {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
@@ -132,6 +137,9 @@
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     height: 38px;
     background: rgba(7, 9, 14, 0.88);
     backdrop-filter: blur(14px);
@@ -209,6 +217,8 @@
 
   .container {
     max-width: 1240px;
+    width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 125px 24px 80px;
     position: relative;
@@ -247,6 +257,10 @@
     font-size: 11px;
     margin-bottom: 16px;
     letter-spacing: 0.5px;
+  }
+
+  .hero-mobile-br {
+    display: none;
   }
 
   .hero-h1 {
@@ -1141,6 +1155,436 @@
     color: var(--text-dim);
     font-family: 'JetBrains Mono', monospace;
   }
+
+  /* ====================================================
+     MOBILE RESPONSIVE SYSTEM (Zero horizontal overflow, fluid scaling)
+     ==================================================== */
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: clip !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .ambient-canvas {
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      overflow: hidden !important;
+    }
+
+    .ambient-orb {
+      max-width: 250px !important;
+      max-height: 250px !important;
+      filter: blur(70px) !important;
+    }
+
+    .hud-bar {
+      height: 34px !important;
+      padding: 0 12px !important;
+      font-size: 10px !important;
+    }
+
+    .hud-hide-mobile {
+      display: none !important;
+    }
+
+    .nav-dock {
+      display: none !important;
+    }
+
+    .container {
+      padding: 46px 14px 40px !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      overflow-x: clip !important;
+    }
+
+    .hero-grid,
+    .proj-card,
+    .cert-showcase-card,
+    .calc-card,
+    .skills-matrix-grid,
+    .contact-cards-grid {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .hero-grid {
+      gap: 24px !important;
+      margin-bottom: 45px !important;
+    }
+
+    .hero-left, .hero-right {
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+
+    .hero-tag {
+      font-size: 10px !important;
+      padding: 4px 8px !important;
+      letter-spacing: 0.2px !important;
+      max-width: 100% !important;
+      white-space: normal !important;
+      line-height: 1.4 !important;
+    }
+
+    .hero-mobile-br {
+      display: inline !important;
+    }
+
+    .hero-h1 {
+      font-size: clamp(22px, 6.8vw, 30px) !important;
+      line-height: 1.2 !important;
+      letter-spacing: -0.5px !important;
+      word-wrap: break-word !important;
+      margin-bottom: 8px !important;
+    }
+
+    .hero-sub {
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+      margin-bottom: 12px !important;
+      word-break: break-word !important;
+    }
+
+    .hero-bio {
+      font-size: 13px !important;
+      line-height: 1.55 !important;
+      margin-bottom: 18px !important;
+    }
+
+    .hero-badges-row {
+      gap: 6px !important;
+      margin-bottom: 20px !important;
+    }
+
+    .pill-badge {
+      font-size: 10px !important;
+      padding: 4px 8px !important;
+    }
+
+    .hero-cta-group {
+      flex-direction: column !important;
+      width: 100% !important;
+      gap: 10px !important;
+    }
+
+    .hero-cta-group .btn-primary,
+    .hero-cta-group .btn-secondary {
+      width: 100% !important;
+      justify-content: center !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+      padding: 12px 16px !important;
+      font-size: 13px !important;
+    }
+
+    .holo-card {
+      padding: 14px !important;
+      border-radius: 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .persona-switch-bar {
+      margin-bottom: 12px !important;
+    }
+
+    .switch-btn {
+      font-size: 10px !important;
+      padding: 6px 8px !important;
+    }
+
+    .persona-img-wrap {
+      height: 250px !important;
+      border-radius: 6px !important;
+    }
+
+    .holo-stats {
+      gap: 8px !important;
+      margin-top: 12px !important;
+      padding-top: 12px !important;
+    }
+
+    .stat-box {
+      padding: 8px 10px !important;
+    }
+
+    .stat-num {
+      font-size: 17px !important;
+    }
+
+    .stat-label {
+      font-size: 10px !important;
+    }
+
+    .section-block {
+      margin-bottom: 50px !important;
+    }
+
+    .sec-heading {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 6px !important;
+      margin-bottom: 20px !important;
+      padding-bottom: 12px !important;
+    }
+
+    .sec-h2 {
+      font-size: 20px !important;
+      line-height: 1.25 !important;
+    }
+
+    .sec-sub-tag {
+      font-size: 10px !important;
+    }
+
+    .projects-stack {
+      gap: 20px !important;
+    }
+
+    .proj-card {
+      padding: 14px !important;
+      gap: 14px !important;
+      border-radius: 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .proj-media {
+      order: -1 !important;
+      width: 100% !important;
+      aspect-ratio: 16 / 9 !important;
+      border-radius: 6px !important;
+    }
+
+    .proj-img {
+      width: 100% !important;
+      height: 100% !important;
+      aspect-ratio: 16 / 9 !important;
+      object-fit: contain !important;
+    }
+
+    .proj-content {
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+
+    .proj-h3 {
+      font-size: 17px !important;
+      line-height: 1.3 !important;
+      word-break: break-word !important;
+      margin-bottom: 6px !important;
+    }
+
+    .proj-desc {
+      font-size: 12.5px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .proj-features li {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+      padding-left: 14px !important;
+      margin-bottom: 4px !important;
+    }
+
+    .interactive-sim-box {
+      padding: 8px 10px !important;
+      font-size: 10.5px !important;
+      margin: 8px 0 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    .interactive-sim-box > div:first-child {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 6px !important;
+    }
+
+    .sim-btn {
+      width: 100% !important;
+      text-align: center !important;
+      padding: 6px 10px !important;
+      font-size: 10.5px !important;
+      box-sizing: border-box !important;
+    }
+
+    .proj-actions {
+      padding-top: 8px !important;
+      width: 100% !important;
+    }
+
+    .proj-actions .btn-primary {
+      width: 100% !important;
+      justify-content: center !important;
+      text-align: center !important;
+      font-size: 12px !important;
+      padding: 10px 14px !important;
+      box-sizing: border-box !important;
+    }
+
+    .certs-stack {
+      gap: 20px !important;
+    }
+
+    .cert-showcase-card {
+      padding: 14px !important;
+      gap: 16px !important;
+      border-radius: 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .cert-doc-frame {
+      max-width: 180px !important;
+      margin: 0 auto !important;
+    }
+
+    .cert-content-pane {
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+
+    .cert-heading {
+      font-size: 17px !important;
+      line-height: 1.3 !important;
+      word-break: break-word !important;
+    }
+
+    .cert-subheading {
+      font-size: 11px !important;
+      margin-bottom: 8px !important;
+    }
+
+    .cert-narrative {
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 12px !important;
+    }
+
+    .cert-skills-matrix {
+      gap: 5px !important;
+      margin-bottom: 14px !important;
+    }
+
+    .c-skill-tag {
+      font-size: 10px !important;
+      padding: 3px 6px !important;
+    }
+
+    .cert-footer-row {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 8px !important;
+      width: 100% !important;
+    }
+
+    .cert-footer-row .btn-primary {
+      width: 100% !important;
+      justify-content: center !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+      font-size: 12px !important;
+      padding: 10px 14px !important;
+    }
+
+    .cert-audit-text {
+      text-align: center !important;
+      font-size: 10.5px !important;
+    }
+
+    .calc-card {
+      padding: 16px !important;
+      gap: 18px !important;
+      border-radius: 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .calc-inputs, .calc-result-box {
+      min-width: 0 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .calc-big-num {
+      font-size: 24px !important;
+    }
+
+    .calc-result-box {
+      padding: 14px !important;
+    }
+
+    .skills-matrix-grid {
+      gap: 12px !important;
+      width: 100% !important;
+    }
+
+    .skill-cat-card {
+      padding: 14px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .contact-section {
+      padding: 24px 14px !important;
+      border-radius: 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .contact-title {
+      font-size: 22px !important;
+    }
+
+    .contact-desc {
+      font-size: 12.5px !important;
+      margin-bottom: 20px !important;
+    }
+
+    .contact-cards-grid {
+      gap: 10px !important;
+      width: 100% !important;
+    }
+
+    .contact-item-card {
+      padding: 12px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .c-val {
+      font-size: 11px !important;
+      word-break: break-all !important;
+    }
+
+    .modal-overlay {
+      padding: 12px !important;
+    }
+
+    .modal-box {
+      padding: 14px !important;
+      border-radius: 8px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .modal-img {
+      max-height: 60vh !important;
+    }
+
+    footer {
+      padding: 20px 14px !important;
+      font-size: 10px !important;
+      line-height: 1.5 !important;
+      word-break: break-word !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1157,11 +1601,11 @@
   <div class="hud-left">
     <div class="pulse-node"></div>
     <span><span translate="no">HARPY OS</span> // Node Online</span>
-    <span style="color: var(--text-dim);">|</span>
-    <span>Security Protocol: Encrypted (<span translate="no">E2EE</span>)</span>
+    <span class="hud-hide-mobile" style="color: var(--text-dim);">|</span>
+    <span class="hud-hide-mobile">Security Protocol: Encrypted (<span translate="no">E2EE</span>)</span>
   </div>
   <div class="hud-right">
-    <span id="liveClock">00:00:00 UTC</span>
+    <span id="liveClock" class="hud-hide-mobile">00:00:00 UTC</span>
     <span style="color:var(--amber-light);">Sohag, Egypt</span>
   </div>
 </div>
@@ -1186,10 +1630,10 @@
       </div>
       <h1 class="hero-h1">
         <span translate="no">Abdul Raouf Ahmed</span><br>
-        <span class="accent">Building Resilient Automation Systems.</span>
+        <span class="accent">Building Resilient<br class="hero-mobile-br"> Automation Systems.</span>
       </h1>
       <div class="hero-sub">
-        Python Automation Developer &amp; Systems Security Practitioner
+        Python Automation Developer<br class="hero-mobile-br"> &amp; Systems Security Practitioner
       </div>
       <p class="hero-bio">
         Graduate of <strong>Business Information Systems (<span translate="no">BIS</span>)</strong>, trained in <strong><span translate="no">CEH</span> &amp; <span translate="no">OSCP</span></strong>. Specializing in autonomous Telegram bots, encrypted telemetric architectures, and scalable multi-tenant web applications.
