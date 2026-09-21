@@ -670,7 +670,10 @@
     border-radius: 16px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1.18fr 0.92fr;
+    grid-template-columns: 1.14fr 0.86fr;
+    align-items: center;
+    padding: 26px 28px;
+    gap: 24px;
     transition: all 0.3s ease;
   }
 
@@ -681,11 +684,11 @@
   }
 
   .proj-content {
-    padding: 28px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 18px;
+    gap: 16px;
   }
 
   .proj-badge-row {
@@ -814,19 +817,24 @@
 
   .proj-media {
     background: var(--bg-inset);
+    border: 1px solid var(--border);
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-inline-start: 1px solid var(--border);
+    width: 100%;
     aspect-ratio: 16 / 10;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   }
 
   .proj-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 11px;
+    display: block;
     transition: transform 0.4s ease;
   }
 
@@ -1468,11 +1476,13 @@
     }
     .proj-card {
       grid-template-columns: 1fr;
+      padding: 18px;
+      gap: 16px;
     }
     .proj-media {
-      border-inline-start: none;
-      border-top: 1px solid var(--border);
       order: -1;
+      width: 100%;
+      aspect-ratio: 16 / 10;
     }
     .workflow-grid, .engagement-grid, .certs-stack, .skills-matrix-grid, .calc-card, .contact-cards-grid {
       grid-template-columns: 1fr;
@@ -2432,8 +2442,8 @@
       "b-git": "Git Version Control",
       "b-docs": "Technical Documentation",
       "cat6-title": "SPOKEN LANGUAGES",
-      "lang-ar": "<strong>Mother Tongue:</strong> <span style="color:var(--amber-light); font-weight:700;">Arabic (Native)</span>",
-      "lang-en": "<strong>English Level:</strong> <span style="color:var(--text-title); font-weight:700;">Working &amp; Technical Proficiency</span>",
+      "lang-ar": "<strong>Mother Tongue:</strong> <span style='color:var(--amber-light); font-weight:700;'>Arabic (Native)</span>",
+      "lang-en": "<strong>English Level:</strong> <span style='color:var(--text-title); font-weight:700;'>Working &amp; Technical Proficiency</span>",
       "badge-lang-native-pill": "Arabic: Native (اللغة الأم) ✓",
       "badge-lang-en-pill": "English: Working Proficiency ✓",
 
@@ -2604,8 +2614,8 @@
       "b-git": "إدارة الإصدارات Git",
       "b-docs": "التوثيق البرمجي",
       "cat6-title": "اللغات وإتقان التواصل",
-      "lang-ar": "<strong>اللغة الأم:</strong> <span style="color:var(--amber-light); font-weight:700;">العربية (إتقان تام وكتابة احترافية)</span>",
-      "lang-en": "<strong>مستوى اللغة الإنجليزية:</strong> <span style="color:var(--text-title); font-weight:700;">كفاءة مهنية وتقنية ممتازة</span>",
+      "lang-ar": "<strong>اللغة الأم:</strong> <span style='color:var(--amber-light); font-weight:700;'>العربية (إتقان تام وكتابة احترافية)</span>",
+      "lang-en": "<strong>مستوى اللغة الإنجليزية:</strong> <span style='color:var(--text-title); font-weight:700;'>كفاءة مهنية وتقنية ممتازة</span>",
       "badge-lang-native-pill": "اللغة الأم: العربية ✓",
       "badge-lang-en-pill": "الإنجليزية: كفاءة مهنية وتقنية ✓",
 
