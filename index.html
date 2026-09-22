@@ -1321,42 +1321,7 @@
     font-family: var(--font-mono);
   }
 
-  /* FLOATING SCROLL TO TOP */
-  .scroll-top-btn {
-    position: fixed;
-    bottom: 24px;
-    inset-inline-end: 24px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--bg-card);
-    border: 1px solid var(--border-hover);
-    color: var(--amber-light);
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.25s ease;
-    z-index: 90;
-  }
 
-  .scroll-top-btn.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .scroll-top-btn:hover {
-    background: var(--amber);
-    color: #000000;
-    transform: translateY(-2px);
-  }
 
   /* MODAL LIGHTBOX */
   .modal-overlay {
@@ -1785,8 +1750,6 @@
       <div class="hero-badges-row">
         <div class="pill-badge glow-amber" data-i18n="badge-academic">BIS Class of 2026</div>
         <div class="pill-badge glow-amber" data-i18n="badge-security">Security Training: CEH &amp; OSCP Prep</div>
-        <div class="pill-badge glow-amber" data-i18n="badge-lang-native">Mother Tongue: Arabic</div>
-        <div class="pill-badge glow-cobalt" data-i18n="badge-lang-en">English: Working Proficiency</div>
         <div class="pill-badge glow-green">
           <span class="live-dot"></span>
           <span data-i18n="badge-status">Open for Freelance &amp; Contracts</span>
