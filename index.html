@@ -186,6 +186,63 @@
     }
   }
 
+  /* MOBILE HORIZONTAL SUBNAV STRIP */
+  .mobile-subnav {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: rgba(7, 9, 14, 0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 12px;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    z-index: 99;
+  }
+
+  [data-theme="light"] .mobile-subnav {
+    background: rgba(248, 250, 252, 0.96);
+  }
+
+  .mobile-subnav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-subnav-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--bg-inset);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .mobile-subnav-item:hover, .mobile-subnav-item.active {
+    color: #07090e;
+    background: var(--amber);
+    border-color: var(--amber);
+    font-weight: 700;
+  }
+
+  [data-theme="light"] .mobile-subnav-item:hover, [data-theme="light"] .mobile-subnav-item.active {
+    color: #ffffff;
+    background: var(--amber-dark);
+    border-color: var(--amber-dark);
+  }
+
   /* COMPACT MOBILE HEADER (Phones/Tablets) */
   .mobile-header {
     display: none;
@@ -1398,8 +1455,7 @@
     .ambient-canvas,
     .nav-dock,
     .mobile-header,
-    .scroll-top-btn,
-    .interactive-sim-box,
+        .interactive-sim-box,
     .calc-card,
     .modal-overlay,
     .btn-primary,
@@ -1452,56 +1508,209 @@
     }
   }
 
-  /* MOBILE-FIRST RESPONSIVENESS */
+  /* MOBILE-FIRST MASTERPIECE RESPONSIVENESS */
   @media (max-width: 960px) {
     .mobile-header {
+      display: flex;
+      height: 56px;
+    }
+    .mobile-subnav {
       display: flex;
     }
     .nav-dock {
       display: none;
     }
     .container {
-      padding: 76px 16px 50px;
+      padding: 116px 14px 44px;
+      max-width: 100%;
     }
     .hero-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
-      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 42px;
+    }
+    .hero-right {
+      order: -1;
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .holo-card {
+      padding: 16px;
+      border-radius: 14px;
+    }
+    .persona-img-wrap {
+      height: 250px;
+      border-radius: 10px;
+    }
+    .hero-tag {
+      font-size: 12px;
+      padding: 5px 12px;
     }
     .hero-h1 {
-      font-size: 32px;
+      font-size: 27px;
+      line-height: 1.25;
+      margin-bottom: 8px;
     }
     .hero-sub {
-      font-size: 18px;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    .hero-bio {
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .hero-badges-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .hero-badges-row .pill-badge {
+      padding: 6px 10px;
+      font-size: 11.5px;
+      text-align: center;
+      justify-content: center;
+    }
+    .hero-badges-row .pill-badge:last-child {
+      grid-column: span 2;
+    }
+    .hero-cta-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .hero-cta-group .btn-primary,
+    .hero-cta-group .btn-secondary {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 13px;
+      justify-content: center;
+      text-align: center;
+    }
+    .sec-h2 {
+      font-size: 24px;
+    }
+    .sec-desc {
+      font-size: 13.5px;
+      line-height: 1.55;
     }
     .proj-card {
       grid-template-columns: 1fr;
-      padding: 18px;
+      padding: 16px;
       gap: 16px;
+      border-radius: 14px;
+    }
+    .proj-content {
+      gap: 14px;
     }
     .proj-media {
       order: -1;
       width: 100%;
       aspect-ratio: 16 / 10;
+      border-radius: 10px;
     }
-    .workflow-grid, .engagement-grid, .certs-stack, .skills-matrix-grid, .calc-card, .contact-cards-grid {
+    .proj-h3 {
+      font-size: 18px;
+    }
+    .proj-desc {
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .proj-features li {
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+    .interactive-sim-box {
+      padding: 12px;
+    }
+    .sim-header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+    }
+    .sim-btn {
+      width: 100%;
+      text-align: center;
+      padding: 8px 12px;
+    }
+    .workflow-grid, .engagement-grid, .certs-stack, .skills-matrix-grid {
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 14px;
+    }
+    .workflow-card, .engage-card, .skill-cat-card {
+      padding: 18px 16px;
+      border-radius: 12px;
+    }
+    .calc-card {
+      grid-template-columns: 1fr;
+      padding: 20px 16px;
+      gap: 20px;
+      border-radius: 14px;
+    }
+    .calc-result-box {
+      padding: 18px 14px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .calc-label-row {
+      font-size: 13px;
+      gap: 8px;
+    }
+    .calc-label-row span:last-child {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .calc-big-num {
+      font-size: 28px;
     }
     .contact-section {
-      padding: 28px 16px;
+      padding: 24px 14px;
+      border-radius: 16px;
+    }
+    .contact-title {
+      font-size: 24px;
+    }
+    .contact-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .contact-item-card {
+      padding: 14px 12px;
+      border-radius: 10px;
+    }
+    .contact-item-card .c-label {
+      font-size: 10px;
+      margin-bottom: 4px;
+    }
+    .contact-item-card .c-title {
+      font-size: 12px;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .contact-item-card .c-val {
+      font-size: 11px;
+    }
+    .consultation-cta-btn {
+      width: 100%;
+      max-width: 420px;
     }
   }
 
-  @media (max-width: 640px) {
-    .hero-cta-group {
-      flex-direction: column;
-      align-items: stretch;
+  @media (max-width: 420px) {
+    .hero-badges-row {
+      grid-template-columns: 1fr;
     }
-    .hero-cta-group .btn-primary,
-    .hero-cta-group .btn-secondary {
-      width: 100%;
-      text-align: center;
+    .hero-badges-row .pill-badge:last-child {
+      grid-column: span 1;
+    }
+    .hero-cta-group {
+      grid-template-columns: 1fr;
+    }
+    .contact-cards-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -1527,6 +1736,18 @@
     </button>
   </div>
 </header>
+
+<!-- MOBILE HORIZONTAL SUBNAV STRIP -->
+<nav class="mobile-subnav" aria-label="Mobile Navigation">
+  <a href="#overview" class="mobile-subnav-item" data-i18n="nav-overview">Overview</a>
+  <a href="#projects" class="mobile-subnav-item" data-i18n="nav-projects">Projects</a>
+  <a href="#training" class="mobile-subnav-item" data-i18n="nav-training">Training</a>
+  <a href="#workflow" class="mobile-subnav-item" data-i18n="nav-workflow">Process</a>
+  <a href="#engagement" class="mobile-subnav-item" data-i18n="nav-engagement">Services</a>
+  <a href="#calculator" class="mobile-subnav-item" data-i18n="nav-calculator">Calculator</a>
+  <a href="#skills" class="mobile-subnav-item" data-i18n="nav-skills">Skills</a>
+  <a href="#contact" class="mobile-subnav-item" data-i18n="nav-contact">Contact</a>
+</nav>
 
 <!-- FLOATING NAVIGATION DOCK (Desktop) -->
 <nav class="nav-dock">
@@ -2244,17 +2465,18 @@
 
     <!-- Primary consultation CTA at the bottom of direct communication channels -->
     <div style="margin-top:34px; display:flex; justify-content:center;">
-      <a href="#" class="btn-primary consultation-cta-btn" style="padding:15px 36px; font-size:15px; font-weight:700; border-radius:10px; box-shadow: 0 4px 24px var(--amber-glow); display:inline-flex; align-items:center; gap:10px;">
+      <a href="#" class="btn-primary consultation-cta-btn" style="padding:15px 36px; font-size:15px; font-weight:700; border-radius:10px; box-shadow: 0 4px 24px var(--amber-glow); display:inline-flex; align-items:center; justify-content:center; gap:8px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:middle; margin-inline-end:6px; flex-shrink:0;">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.126-.514-1.825-.757-3.003-2.613-3.094-2.735-.091-.122-.74-1.002-.74-1.915 0-.913.473-1.36.642-1.543.169-.183.37-.229.493-.229.124 0 .248.001.354.006.113.005.263-.042.412.316.155.373.531 1.294.577 1.388.046.094.077.203.015.326-.062.123-.092.2-.183.308-.092.107-.193.24-.276.322-.092.092-.188.193-.081.377.107.184.477.788 1.023 1.275.703.627 1.296.821 1.48.913.185.092.293.077.401-.046.108-.124.463-.538.586-.723.123-.185.247-.154.416-.092.169.062 1.079.509 1.264.602.185.092.308.138.354.215.046.077.046.447-.098.852zM12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.76.459 3.478 1.333 4.992L2 22l5.233-1.222c1.458.799 3.107 1.221 4.779 1.222 5.508 0 9.989-4.479 9.99-9.985.002-5.511-4.479-9.991-9.99-9.991z"/>
+        </svg>
         <span data-i18n="cta-consult">Book a Free Consultation</span>
-        <span>💬</span>
       </a>
     </div>
   </section>
 
 </div>
 
-<!-- FLOATING SCROLL TO TOP -->
-<button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
 
 <!-- LIGHTBOX MODAL -->
 <div class="modal-overlay" id="certModal" onclick="closeModal(event)">
@@ -2868,21 +3090,7 @@
     document.getElementById('annualDollars').innerHTML = '<span dir="ltr">$' + dollarSaved.toLocaleString() + dollarSuffix + '</span>';
   }
 
-  // Floating Scroll to Top button
-  window.addEventListener('scroll', () => {
-    const btn = document.getElementById('scrollTopBtn');
-    if (btn) {
-      if (window.scrollY > 400) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
-    }
-  });
-
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  // Scroll to top removed
 
   // Dynamic WhatsApp and Protected Contact Assembly
   const serviceInquiries = {
@@ -2960,6 +3168,49 @@
     }
     if (emailVal) emailVal.innerHTML = '<span dir="ltr">' + fullEmail + '</span>';
   })();
+
+  // Navigation ScrollSpy (Desktop & Mobile)
+  const navSectionIds = ['overview', 'projects', 'training', 'workflow', 'engagement', 'calculator', 'skills', 'contact'];
+  let isThrottled = false;
+
+  window.addEventListener('scroll', () => {
+    if (isThrottled) return;
+    isThrottled = true;
+    setTimeout(() => { isThrottled = false; }, 80);
+
+    const scrollPos = window.pageYOffset + 140;
+    let currentId = 'overview';
+
+    for (const id of navSectionIds) {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollPos) {
+        currentId = id;
+      }
+    }
+
+    // Update desktop nav
+    document.querySelectorAll('.nav-dock .nav-item').forEach(item => {
+      if (item.getAttribute('href') === '#' + currentId) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+
+    // Update mobile subnav
+    document.querySelectorAll('.mobile-subnav .mobile-subnav-item').forEach(item => {
+      if (item.getAttribute('href') === '#' + currentId) {
+        if (!item.classList.contains('active')) {
+          item.classList.add('active');
+          try {
+            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          } catch(e) {}
+        }
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }, { passive: true });
 
   // Initialize on page load
   window.addEventListener('DOMContentLoaded', () => {
