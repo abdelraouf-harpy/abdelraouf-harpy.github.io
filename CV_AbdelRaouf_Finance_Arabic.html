@@ -12,7 +12,6 @@
     --primary: #0f2744;
     --primary-light: #1e3a8a;
     --accent: #0284c7;
-    --accent-green: #047857;
     --text-main: #0f172a;
     --text-body: #334155;
     --text-muted: #64748b;
@@ -57,9 +56,9 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    padding-bottom: 12px;
+    padding-bottom: 14px;
     border-bottom: 2px solid var(--primary);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .avatar-wrap {
@@ -96,14 +95,14 @@
     font-size: 11.5pt;
     font-weight: 700;
     color: var(--accent);
-    margin-bottom: 7px;
+    margin-bottom: 8px;
   }
 
   .contact-strip {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: start;
-    gap: 4px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px 8px;
     font-size: 9.3pt;
     color: var(--text-body);
   }
@@ -113,7 +112,7 @@
     align-items: center;
     gap: 4px;
     background: #f8fafc;
-    padding: 2px 8px;
+    padding: 2.5px 8px;
     border-radius: 4px;
     border: 1px solid #e2e8f0;
   }
@@ -132,39 +131,6 @@
     direction: ltr;
     unicode-bidi: isolate;
     display: inline-block;
-  }
-
-  /* META STATUS */
-  .meta-status {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 7px 0;
-    border-bottom: 1px dashed var(--border-line);
-    margin-bottom: 11px;
-    font-size: 9.9pt;
-  }
-
-  .meta-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .meta-label {
-    color: var(--text-muted);
-    font-weight: 600;
-  }
-
-  .meta-val {
-    font-weight: 800;
-    color: var(--primary);
-  }
-
-  .meta-badge-green {
-    color: var(--accent-green);
-    font-weight: 800;
   }
 
   /* SECTIONS */
@@ -189,7 +155,7 @@
   }
 
   .section-title {
-    font-size: 11.5pt;
+    font-size: 11.3pt;
     font-weight: 800;
     color: var(--primary);
     letter-spacing: -0.2px;
@@ -197,15 +163,49 @@
 
   .summary-text {
     color: var(--text-body);
-    font-size: 9.9pt;
+    font-size: 9.8pt;
     line-height: 1.62;
     text-align: justify;
   }
 
-  /* CLEAN 2-COLUMN SKILLS WITHOUT HEAVY CARDS */
+  /* EDUCATION & CERTS */
+  .edu-entry {
+    margin-bottom: 7px;
+  }
+
+  .edu-entry:last-child {
+    margin-bottom: 0;
+  }
+
+  .edu-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+
+  .edu-main-title {
+    font-size: 10.2pt;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  .edu-tag {
+    font-size: 9.1pt;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .edu-details {
+    font-size: 9.4pt;
+    color: var(--text-body);
+    line-height: 1.48;
+  }
+
+  /* CLEAN 2-COLUMN SKILLS */
   .skills-grid {
     display: flex;
-    gap: 20px;
+    gap: 18px;
   }
 
   .skills-col {
@@ -213,10 +213,10 @@
   }
 
   .skills-col-title {
-    font-size: 10.3pt;
+    font-size: 10.1pt;
     font-weight: 800;
     color: var(--primary-light);
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -231,8 +231,8 @@
   .clean-list li {
     position: relative;
     padding-right: 14px;
-    margin-bottom: 5px;
-    font-size: 9.6pt;
+    margin-bottom: 4px;
+    font-size: 9.5pt;
     color: var(--text-body);
     line-height: 1.5;
   }
@@ -273,13 +273,13 @@
   }
 
   .project-title {
-    font-size: 10.2pt;
+    font-size: 10.1pt;
     font-weight: 800;
     color: var(--primary);
   }
 
   .project-url {
-    font-size: 9.2pt;
+    font-size: 9.1pt;
     font-weight: 700;
     color: var(--accent);
     direction: ltr;
@@ -287,40 +287,6 @@
   }
 
   .project-desc {
-    font-size: 9.5pt;
-    color: var(--text-body);
-    line-height: 1.5;
-  }
-
-  /* EDUCATION & QUALIFICATIONS */
-  .edu-entry {
-    margin-bottom: 6px;
-  }
-
-  .edu-entry:last-child {
-    margin-bottom: 0;
-  }
-
-  .edu-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 2px;
-  }
-
-  .edu-main-title {
-    font-size: 10.2pt;
-    font-weight: 800;
-    color: var(--primary);
-  }
-
-  .edu-tag {
-    font-size: 9.2pt;
-    color: var(--text-muted);
-    font-weight: 600;
-  }
-
-  .edu-details {
     font-size: 9.4pt;
     color: var(--text-body);
     line-height: 1.48;
@@ -347,49 +313,69 @@
     </div>
     <div class="header-info">
       <h1 class="header-name">عبد الرؤوف أحمد</h1>
-      <div class="header-title">نظم معلومات الأعمال (BIS) • مبيعات وتطوير الأعمال وحلول البيانات</div>
+      <div class="header-title">نظم معلومات الأعمال (BIS) • حلول البيانات والأنظمة الرقمية</div>
       <div class="contact-strip">
         <div class="contact-item">
           <span class="label">العنوان:</span>
-          <span class="val">مصر، سوهاج</span>
+          <span class="val">مصر، سوهاج - مركز ساقلتة</span>
         </div>
         <div class="contact-item">
           <span class="label">الهاتف:</span>
           <a href="tel:01019971508" class="val ltr-val">01019971508</a>
         </div>
         <div class="contact-item">
+          <span class="label">الموقف التجنيدي:</span>
+          <span class="val">إعفاء نهائي</span>
+        </div>
+        <div class="contact-item">
           <span class="label">البريد:</span>
-          <a href="mailto:abdoumrx81@gmail.com" class="val ltr-val">abdoumrx81@gmail.com</a>
+          <a href="mailto:abdo.mrx81@gmail.com" class="val ltr-val">abdo.mrx81@gmail.com</a>
         </div>
         <div class="contact-item">
           <span class="label">البورتفوليو:</span>
-          <a href="https://harpy-code.github.io" class="val ltr-val">harpy-code.github.io</a>
+          <a href="https://abdelraouf-harpy.github.io" class="val ltr-val">abdelraouf-harpy.github.io</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- META STATUS BAR (CLEAN) -->
-  <div class="meta-status">
-    <div class="meta-item">
-      <span class="meta-label">المؤهل الأكاديمي:</span>
-      <span class="meta-val">بكالوريوس نظم معلومات الأعمال (BIS)</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">الموقف التجنيدي:</span>
-      <span class="meta-val meta-badge-green">إعفاء نهائي من الخدمة العسكرية (تفرغ تام للعمل)</span>
-    </div>
-  </div>
-
   <!-- PROFESSIONAL SUMMARY -->
   <section class="section">
     <div class="section-header">
       <div class="section-bar"></div>
-      <h2 class="section-title">النبذة المهنية</h2>
+      <h2 class="section-title">نبذة مهنية</h2>
     </div>
     <p class="summary-text">
-      خريج <strong>نظم معلومات الأعمال (BIS)</strong>، أجمع بين الفهم الإداري والتجاري والقدرة على توظيف الحلول الرقمية وأدوات تحليل البيانات لخدمة أهداف العمل. أمتلك مهارات تواصل وتفاوض قوية، والقدرة على الاستماع الجيد لاحتياجات العملاء وبناء علاقات ثقة متينة، ومتابعة المعاملات البيعية بدقة وكفاءة، مع جاهزية تامة للتطور السريع والمساهمة في تحقيق مستهدفات المبيعات والنمو.
+      خريج <strong>نظم معلومات الأعمال (BIS)</strong>، أجمع بين الفهم الإداري والتجاري وإتقان أدوات تحليل البيانات (Microsoft Excel) وتطوير الأنظمة الرقمية وأمن وسرية المعلومات. أمتلك خبرة عملية في إطلاق وإدارة مشاريع برمجية حقيقية تعمل على أرض الواقع، مع قدرة عالية على التواصل والتنسيق وإنجاز المهام والتعامل مع مختلف الأنظمة الإلكترونية بدقة وكفاءة.
     </p>
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-bar"></div>
+      <h2 class="section-title">المؤهل الأكاديمي والشهادات التخصصية</h2>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-head">
+        <span class="edu-main-title">بكالوريوس نظم معلومات الأعمال (BIS)</span>
+        <span class="edu-tag">المعهد العالي لنظم التجارة الإلكترونية، سوهاج • دفعة 2024</span>
+      </div>
+      <div class="edu-details">
+        دراسة متكاملة تجمع بين إدارة الأعمال والمحاسبة والتجارة الإلكترونية، وتطبيق تكنولوجيا ونظم المعلومات في بيئة العمل.
+      </div>
+    </div>
+
+    <div class="edu-entry" style="margin-top: 5px;">
+      <div class="edu-head">
+        <span class="edu-main-title">شهادات ودورات تخصصية في أمن المعلومات (Cyber Security)</span>
+        <span class="edu-tag">تدريب تطبيقي مكثف</span>
+      </div>
+      <div class="edu-details">
+        دراسة وتدريب عملي على <strong>CEH</strong> (الهكر الأخلاقي وتأمين الشبكات) و <strong>OSCP</strong> (اختبار الاختراق وتقييم الثغرات وحماية أمان البيانات).
+      </div>
+    </div>
   </section>
 
   <!-- CORE SKILLS -->
@@ -400,21 +386,19 @@
     </div>
     <div class="skills-grid">
       <div class="skills-col">
-        <div class="skills-col-title">مهارات المبيعات والتواصل والتعامل مع العملاء</div>
+        <div class="skills-col-title">أدوات العمل والتحليل المكتبي</div>
         <ul class="clean-list">
-          <li><strong>التواصل والإقناع:</strong> لباقة في التحدث، مهارات تفاوض عالية، وبناء الثقة مع مختلف شرائح العملاء.</li>
-          <li><strong>خدمة وتوجيه العملاء:</strong> الاستماع الدقيق لاحتياجات العميل وتقديم الحلول والخيارات المناسبة بوضوح.</li>
-          <li><strong>إدارة المعاملات البيعية:</strong> متابعة مراحل البيع بفاعلية، والالتزام الصارم بتحقيق المستهدفات (Targets).</li>
-          <li><strong>المرونة وحل المشكلات:</strong> قدرة على العمل تحت ضغط والتعامل الإيجابي الهادئ مع استفسارات واعتراضات العملاء.</li>
+          <li><strong>إتقان متقدم لـ Microsoft Excel:</strong> إدخال ومعالجة البيانات، الجداول المحورية (Pivot Tables)، والدوال، والتقارير ومتابعة المؤشرات.</li>
+          <li><strong>حزمة Microsoft Office:</strong> إعداد وكتابة المستندات والتقارير (Word)، وتصميم العروض التقديمية (PowerPoint).</li>
+          <li><strong>المهارات الشخصية والتنظيمية:</strong> مهارات تواصل جيدة، تنظيم ومتابعة الأعمال، والدقة في معالجة البيانات، وجاهزية تامة للعمل.</li>
         </ul>
       </div>
       <div class="skills-col">
-        <div class="skills-col-title">أدوات العمل وتحليل البيانات والكفاءة الرقمية</div>
+        <div class="skills-col-title">المهارات التقنية والبرمجية</div>
         <ul class="clean-list">
-          <li><strong>إتقان Microsoft Excel:</strong> إدخال ومعالجة البيانات، الجداول المحورية (Pivot Tables)، والتقارير ومتابعة المؤشرات.</li>
-          <li><strong>حزمة Microsoft Office:</strong> إعداد التقارير الإدارية (Word) والعروض التقديمية الاحترافية (PowerPoint).</li>
-          <li><strong>الأنظمة الرقمية:</strong> استيعاب سريع للأنظمة الإلكترونية لإدارة المعاملات وخدمة العملاء وقواعد البيانات.</li>
-          <li><strong>أمن وسرية البيانات:</strong> دراية كاملة بأهمية الحفاظ على سرية وأمان بيانات العملاء والتعاملات المالية والرقمية.</li>
+          <li><strong>البرمجة والأتمتة:</strong> لغة Python للأتمتة واستخراج ومعالجة البيانات، ولغة JavaScript، وتقنيات HTML5 / CSS3.</li>
+          <li><strong>الأنظمة وقواعد البيانات:</strong> التعامل مع قواعد البيانات (SQL) والربط مع واجهات البرمجة (APIs).</li>
+          <li><strong>أمن المعلومات:</strong> دراية بمعايير حماية وسرية البيانات، وتأمين التعاملات والملفات الرقمية الحساسة.</li>
         </ul>
       </div>
     </div>
@@ -424,7 +408,7 @@
   <section class="section">
     <div class="section-header">
       <div class="section-bar"></div>
-      <h2 class="section-title">مشروعات عملية وحلول حقيقية منفذة</h2>
+      <h2 class="section-title">مشروعات عملية حقيقية منفذة على أرض الواقع</h2>
     </div>
 
     <div class="project-entry">
@@ -433,7 +417,7 @@
         <a href="https://gizaland.com" class="project-url">gizaland.com ↗</a>
       </div>
       <div class="project-desc">
-        منصة رقمية لربط العملاء بالفرص العقارية المتاحة، وتنظيم عروض الملاك وتسهيل التواصل ومتابعة المعاملات وتوثيق بيانات العروض.
+        منصة عقارية متكاملة لربط العملاء بالفرص المتاحة، تنظيم عروض الملاك، وتوثيق بيانات العقارات وتسهيل التواصل وإدارة الصفقات.
       </div>
     </div>
 
@@ -443,7 +427,7 @@
         <a href="https://harpymenu.com" class="project-url">harpymenu.com ↗</a>
       </div>
       <div class="project-desc">
-        نظام رقمي لاستقبال طلبات العملاء وتوجيهها لحظياً، وحساب وطباعة الإيصالات بدقة، وإدارة وتتبع حركة المبيعات وتدفق المعاملات.
+        نظام رقمي لاستقبال وتوجيه طلبات العملاء لحظياً، وحساب وطباعة الإيصالات بدقة، وإدارة ومتابعة تدفق حركة المبيعات والمعاملات.
       </div>
     </div>
 
@@ -453,42 +437,14 @@
         <a href="https://t.me/brookers_bot" class="project-url">@brookers_bot ↗</a>
       </div>
       <div class="project-desc">
-        أداة رقمية لجمع وتحليل مؤشرات السوق، وتتبع تغيرات الأسعار ومعدلات الطلب، وإرسال تنبيهات فورية لدعم القرارات البيعية والاستثمارية.
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION & TECH BACKGROUND -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-bar"></div>
-      <h2 class="section-title">التأهيل الأكاديمي والتدريب التقني</h2>
-    </div>
-
-    <div class="edu-entry">
-      <div class="edu-head">
-        <span class="edu-main-title">بكالوريوس نظم معلومات الأعمال (Business Information Systems - BIS)</span>
-        <span class="edu-tag">تخصص إدارة الأعمال ونظم المعلومات</span>
-      </div>
-      <div class="edu-details">
-        دراسة متكاملة تجمع بين إدارة العمليات، التسويق، المحاسبة، وتطبيق تكنولوجيا المعلومات والحلول الرقمية في تطوير الأعمال.
-      </div>
-    </div>
-
-    <div class="edu-entry" style="margin-top: 5px;">
-      <div class="edu-head">
-        <span class="edu-main-title">تدريب عملي متقدم في أمن المعلومات وتطوير النظم البرمجية</span>
-        <span class="edu-tag">برامج تطبيقية مكثفة</span>
-      </div>
-      <div class="edu-details">
-        تأهيل عملي في حماية سرية بيانات ومعاملات العملاء (Cyber Security)، وبناء وتطوير الواجهات والأنظمة الرقمية (Full-Stack).
+        محرك مؤتمت مبني بلغة بايثون لسحب وتحليل مؤشرات السوق، وتتبع الأسعار ومعدلات الطلب، وإرسال تنبيهات لحظية لدعم اتخاذ القرارات.
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    عبد الرؤوف أحمد • مصر، سوهاج • هاتف: 01019971508 • تفرغ تام وجاهزية كاملة للعمل الفوري
+    عبد الرؤوف أحمد • مصر، سوهاج - مركز ساقلتة • هاتف: 01019971508 • تفرغ تام وجاهزية كاملة للعمل
   </footer>
 
 </div>
